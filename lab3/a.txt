@@ -1,0 +1,2067 @@
+working dir: /u/course/ece244i/public//3
+
+#############################################################
+#############################################################
+Running Testcase 1
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 20
+create circle1 ellipse 50 80 2 2
+move circle1 100 160
+draw circle1
+draw all
+delete circle1
+delete all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./1 > /tmp/Pqc3M8FRXJ/gilotraa.out1 2> /tmp/Pqc3M8FRXJ/gilotraa.err1
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 20
+> Created  circle1: ellipse 50 80 2 2
+> Moved circle1 to 100 160
+> Drew circle1: ellipse 100 160 2 2
+> Drew all shapes
+circle1: ellipse 100 160 2 2
+> Deleted shape circle1
+> Deleted: all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 1 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 2
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 100
+NotACommand
+create triangle1 triangle 4 five 2 2
+create triangle1 triangle 4 5 2 2
+create c1 circle 1 1 30 30
+move triangle1 -100 100
+create move ellipse 100 100 20 10
+create Ellipse ellipse 100 100 20 10
+draw triangle1 circle1
+draw
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./2 > /tmp/Pqc3M8FRXJ/gilotraa.out2 2> /tmp/Pqc3M8FRXJ/gilotraa.err2
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 100
+> Error: invalid command
+> Error: invalid argument
+> Created  triangle1: triangle 4 5 2 2
+> Created  c1: circle 1 1 30 30
+> Error: invalid value
+> Error: invalid shape name
+> Created  Ellipse: ellipse 100 100 20 10
+> Error: too many arguments
+> Error: too few arguments
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 2 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 3
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 10
+create s1 ellipse onehundred 1 2
+create s1 triangle -100 1 2 4
+create s1 rectangle one two five eight
+create s1 hexagon 100 1200 5 8
+create s1 ellipse 100 200 1 2 6
+create s1 ellipse 100 200
+create s1 rectangle 100 200 10 20
+rotate s1 -100
+rotate s1 362
+draw everything
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./3 > /tmp/Pqc3M8FRXJ/gilotraa.out3 2> /tmp/Pqc3M8FRXJ/gilotraa.err3
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 10
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid shape type
+> Error: too many arguments
+> Error: too few arguments
+> Created  s1: rectangle 100 200 10 20
+> Error: invalid value
+> Error: invalid value
+> Error: shape everything not found
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 3 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 4
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 10
+create s1 triangle 100 1 2 2 done
+create s1 triangle 100 1
+create s1 triangle 100
+create s1
+create
+move s1 100 200 300
+move s1
+move
+draw s1 done
+draw
+delete s1 done
+delete all done
+delete
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./4 > /tmp/Pqc3M8FRXJ/gilotraa.out4 2> /tmp/Pqc3M8FRXJ/gilotraa.err4
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 10
+> Error: too many arguments
+> Error: too few arguments
+> Error: too few arguments
+> Error: too few arguments
+> Error: too few arguments
+> Error: shape s1 not found
+> Error: shape s1 not found
+> Error: too few arguments
+> Error: shape s1 not found
+> Error: too few arguments
+> Error: shape s1 not found
+> Error: too many arguments
+> Error: too few arguments
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 4 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 5
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 1
+create s1 ellipse 1 1 3 3
+move s1 30 30
+maxShapes 10
+draw all
+delete s1
+create s3 ellipse 10 10 10 10
+create s1 circle 1 1 90 90
+draw s1
+delete s3
+delete s1
+draw all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./5 > /tmp/Pqc3M8FRXJ/gilotraa.out5 2> /tmp/Pqc3M8FRXJ/gilotraa.err5
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 1
+> Created  s1: ellipse 1 1 3 3
+> Moved s1 to 30 30
+> New database: max shapes is 10
+> Drew all shapes
+> Error: shape s1 not found
+> Created  s3: ellipse 10 10 10 10
+> Created  s1: circle 1 1 90 90
+> Drew s1: circle 1 1 90 90
+> Deleted shape s3
+> Deleted shape s1
+> Drew all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 5 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 6
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 10
+create s1 rectangle 30 40 -50 10
+create s4 rectangle 30 40
+create s3 circle 1 30 4 1
+move s1 to the right
+draw one
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./6 > /tmp/Pqc3M8FRXJ/gilotraa.out6 2> /tmp/Pqc3M8FRXJ/gilotraa.err6
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 10
+> Error: invalid value
+> Error: too few arguments
+> Error: invalid value
+> Error: shape s1 not found
+> Error: shape one not found
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 6 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 7
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 2
+create s1 ellipse 100 100 1 2
+create s2 ellipse 100 100 1 2
+create s3 ellipse 100 100 1 2
+delete s2
+create s4 ellipse 100 100 1 2
+move s1 200 100
+rotate         100
+create s1           100 1
+create s1      100
+create s1
+draw all
+create s5 triangle 100 1 2 0 0
+rotate s5 -200
+draw 1st_node
+draw 1.5
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./7 > /tmp/Pqc3M8FRXJ/gilotraa.out7 2> /tmp/Pqc3M8FRXJ/gilotraa.err7
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 2
+> Created  s1: ellipse 100 100 1 2
+> Created  s2: ellipse 100 100 1 2
+> Error: shape array is full
+> Deleted shape s2
+> Error: shape array is full
+> Moved s1 to 200 100
+> Error: shape 100 not found
+> Error: shape s1 exists
+> Error: shape s1 exists
+> Error: shape s1 exists
+> Drew all shapes
+s1: ellipse 200 100 1 2
+> Error: too many arguments
+> Error: shape s5 not found
+> Error: shape 1st_node not found
+> Error: shape 1.5 not found
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 7 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 8
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 20
+create circle1 ellipse 50t 80 2 2
+delete circle1
+delete all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./8 > /tmp/Pqc3M8FRXJ/gilotraa.out8 2> /tmp/Pqc3M8FRXJ/gilotraa.err8
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 20
+> Error: invalid argument
+> Error: shape circle1 not found
+> Deleted: all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 8 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 9
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 100
+create s1 ellipse 100 100 15 15
+delete s1
+delete s1
+delete all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./9 > /tmp/Pqc3M8FRXJ/gilotraa.out9 2> /tmp/Pqc3M8FRXJ/gilotraa.err9
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 100
+> Created  s1: ellipse 100 100 15 15
+> Deleted shape s1
+> Error: shape s1 not found
+> Deleted: all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 9 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 10
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 10
+create s1 triangle 1 3 40 10
+draw all
+maxShapes 3
+create s1 rectangle 90 90 3 4
+create s2 triangle 1 1 1 1
+create s3 ellipse 30 30 30 30
+create s4 circle 9 9 20 20
+draw all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./10 > /tmp/Pqc3M8FRXJ/gilotraa.out10 2> /tmp/Pqc3M8FRXJ/gilotraa.err10
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 10
+> Created  s1: triangle 1 3 40 10
+> Drew all shapes
+s1: triangle 1 3 40 10
+> New database: max shapes is 3
+> Created  s1: rectangle 90 90 3 4
+> Created  s2: triangle 1 1 1 1
+> Created  s3: ellipse 30 30 30 30
+> Error: shape array is full
+> Drew all shapes
+s1: rectangle 90 90 3 4
+s2: triangle 1 1 1 1
+s3: ellipse 30 30 30 30
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 10 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 11
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 10
+Create s1 rectangle 30 40 1 1
+create t1 triangle 4 10 4 1 50
+create c1 circle 1 1 3 3
+create t2 triangle 1 1 70 70
+draw all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./11 > /tmp/Pqc3M8FRXJ/gilotraa.out11 2> /tmp/Pqc3M8FRXJ/gilotraa.err11
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 10
+> Error: invalid command
+> Error: too many arguments
+> Created  c1: circle 1 1 3 3
+> Created  t2: triangle 1 1 70 70
+> Drew all shapes
+c1: circle 1 1 3 3
+t2: triangle 1 1 70 70
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 11 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 12
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 40
+create Rectangle3 rectangle 3 4 7 7.1
+draw all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./12 > /tmp/Pqc3M8FRXJ/gilotraa.out12 2> /tmp/Pqc3M8FRXJ/gilotraa.err12
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 40
+> Error: invalid argument
+> Drew all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 12 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 13
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 3
+create a circle    1 2 4 4
+create b rectangle 1 2 3 4
+create c ellipse   1 2 3 3
+draw all
+delete all
+draw all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./13 > /tmp/Pqc3M8FRXJ/gilotraa.out13 2> /tmp/Pqc3M8FRXJ/gilotraa.err13
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 3
+> Created  a: circle 1 2 4 4
+> Created  b: rectangle 1 2 3 4
+> Created  c: ellipse 1 2 3 3
+> Drew all shapes
+a: circle 1 2 4 4
+b: rectangle 1 2 3 4
+c: ellipse 1 2 3 3
+> Deleted: all shapes
+> Drew all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+Running valgrind to check for memory leaks
+
+############### Testcase 13 Results ##########################
+Functionality: PASS - Output matches solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 14
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 3
+create
+create ellipse
+create apple
+create apple Ellis
+create apple      ellipse
+create apple       ellipse 2
+create apple ellipse         2.0         2 2 2
+create apple ellipse 2.abc       2 2 2
+create apple ellipse 2.  abc 2 2 2
+create apple ellipse -2.0 2 2 2
+create apple ellipse -2. 1 2 2 2
+create apple    ellipse    2 2 2 2.0 .
+create apple       ellipse 2 2 2 -1
+create apple ellipse 2 2 2 2.
+create apple ellipse -2
+create apple ellipse 2 2 2 2
+create        banana ellipse 2 2 2 2
+create apple
+create peach circle 1 1  4 5
+create peach circle  1 1 0 0
+create peach circle 1 1  4 4
+create orange ellipse 2 2 2 2 1
+create orange ellipse 2 2 2 2
+move orange    3 3
+move apple 3  3.0
+move apple    3 3
+rotate     orange
+rotate apple       -180
+rotate apple -180.0
+rotate apple  180
+rotate    banana 0
+rotate banana 361
+draw   orange
+draw apple
+draw all apple
+draw all
+delete orange
+delete apple
+create orange ellipse 1     2 3 4
+draw      apple
+draw all
+delete all
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./14 > /tmp/Pqc3M8FRXJ/gilotraa.out14 2> /tmp/Pqc3M8FRXJ/gilotraa.err14
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 3
+> Error: too few arguments
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape type
+> Error: too few arguments
+> Error: too few arguments
+> Created  apple: ellipse 2 2 2 2
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Error: shape apple exists
+> Created  banana: ellipse 2 2 2 2
+> Error: shape apple exists
+> Error: invalid value
+> Created  peach: circle 1 1 0 0
+> Error: shape peach exists
+> Error: too many arguments
+> Error: shape array is full
+> Error: shape orange not found
+> Moved apple to 3 3
+> Moved apple to 3 3
+> Error: shape orange not found
+> Error: invalid value
+> Error: invalid value
+> Rotated apple by 180 degrees 
+> Rotated banana by 0 degrees 
+> Error: invalid value
+> Error: shape orange not found
+> Drew apple: ellipse 3 3 2 2
+> Error: too many arguments
+> Drew all shapes
+apple: ellipse 3 3 2 2
+banana: ellipse 2 2 2 2
+peach: circle 1 1 0 0
+> Error: shape orange not found
+> Deleted shape apple
+> Error: shape array is full
+> Error: shape apple not found
+> Drew all shapes
+banana: ellipse 2 2 2 2
+peach: circle 1 1 0 0
+> Deleted: all shapes
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+
+Output did not match the solution
+The following output would have been accepted:
+
+
+Solution output:
+=============================================================
+> New database: max shapes is 3
+> Error: too few arguments
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape type
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Created apple: ellipse 2 2 2 2
+> Created banana: ellipse 2 2 2 2
+> Error: shape apple exists
+> Error: invalid value
+> Created peach: circle 1 1 0 0
+> Error: shape peach exists
+> Error: too many arguments
+> Error: shape array is full
+> Error: shape orange not found
+> Error: invalid argument
+> Moved apple to 3 3
+> Error: shape orange not found
+> Error: invalid value
+> Error: invalid argument
+> Rotated apple by 180 degrees
+> Rotated banana by 0 degrees
+> Error: invalid value
+> Error: shape orange not found
+> Drew apple: ellipse 3 3 2 2
+> Error: too many arguments
+> Drew all shapes
+apple: ellipse 3 3 2 2
+banana: ellipse 2 2 2 2
+peach: circle 1 1 0 0
+> Error: shape orange not found
+> Deleted shape apple
+> Error: shape array is full
+> Error: shape apple not found
+> Drew all shapes
+banana: ellipse 2 2 2 2
+peach: circle 1 1 0 0
+> Deleted: all shapes
+> 
+-------------------------------------------------------------
+Running diff on program output and solution output
+( < actual output vs > expected output )
+=============================================================
+7a8,16
+> > Error: invalid argument
+> > Error: invalid argument
+> > Error: invalid argument
+> > Error: invalid argument
+> > Error: invalid argument
+> > Error: invalid argument
+> > Error: invalid value
+> > Error: invalid argument
+> > Error: invalid value
+9,17d17
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+< > Error: shape apple exists
+26c26
+< > Moved apple to 3 3
+---
+> > Error: invalid argument
+30c30
+< > Error: invalid value
+---
+> > Error: invalid argument
+-------------------------------------------------------------
+
+Running valgrind to check for memory leaks
+
+############### Testcase 14 Results ##########################
+Functionality: FAIL - Output did not match solution
+Valgrind:      PASS - No memory leaks detected
+
+#############################################################
+#############################################################
+Running Testcase 15
+#############################################################
+#############################################################
+
+Running the following input on your program:
+=============================================================
+maxShapes 1
+create MAXSHAPES circle 10000 10000 0 -1
+create MAXSHAPES circle 10000 10000 0 0
+maxShapes 2
+create MAXSHAPES ellipse 10000 10000 0 1
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create MAXSHAPES
+create maxshapes
+create maxshapes circle2
+create maxshapes rectangle3
+create maxshapes triangle0
+create maxshapes ellipse-1
+create maxshapes circle -1
+create maxshapes circle -.1
+create maxshapes circle 0.1
+create maxshapes circle 0.0
+create maxshapes circle 02 3 4
+create maxshapes circle 0abc
+create maxshapes ellipse-1
+create maxshapes circle 0-1
+create maxshapes circle 0-.1
+create maxshapes circle 00.1
+create maxshapes circle 00.0
+create maxshapes circle 002 3 4
+create maxshapes circle 00abc
+create maxshapes circle 0 -1
+create maxshapes circle 0 -.1
+create maxshapes circle 0 0.1
+create maxshapes circle 0 0.0
+create maxshapes circle 0 02 3 4
+create maxshapes circle 0 0abc
+create maxshapes ellipse 2 3 0 -1 maxshapes
+create maxshapes ellipse 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1maxshapes
+create maxShapes circle2 3 0 1maxshapes
+create maxShapes circle 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 0 1
+create maxshapes circle 2 3 0 0abc
+create maxshapes circle 2 3 0 0
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create MAXSHAPES
+create maxshapes
+create maxshapes circle2
+create maxshapes rectangle3
+create maxshapes triangle0
+create maxshapes ellipse-1
+create maxshapes circle -1
+create maxshapes circle -.1
+create maxshapes circle 0.1
+create maxshapes circle 0.0
+create maxshapes circle 02 3 4
+create maxshapes circle 0abc
+create maxshapes ellipse-1
+create maxshapes circle 0-1
+create maxshapes circle 0-.1
+create maxshapes circle 00.1
+create maxshapes circle 00.0
+create maxshapes circle 002 3 4
+create maxshapes circle 00abc
+create maxshapes circle 0 -1
+create maxshapes circle 0 -.1
+create maxshapes circle 0 0.1
+create maxshapes circle 0 0.0
+create maxshapes circle 0 02 3 4
+create maxshapes circle 0 0abc
+create maxshapes ellipse 2 3 0 -1 maxshapes
+create maxshapes ellipse 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1maxshapes
+create maxShapes circle2 3 0 1maxshapes
+create maxShapes circle 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 0 1
+create maxshapes circle 2 3 0 0abc
+draw all
+delete 0
+delete 1
+deleteall
+deletemaxshapes
+deleteMAXSHAPES
+delete maxShapes
+delete rotate
+delete draw
+delete delete
+delete delete all
+delete name
+delete ellispe
+delete rectangle
+delete circle
+delete triangle
+delete MAXSHAPES
+draw all
+draw maxShapes
+draw 0
+draw maxshapes
+draw maxshapes all
+draw maxshapes
+delete MAXSHAPES
+delete all MAXSHAPES
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create maxshapes
+create MAXSHAPES
+create MAXSHAPES circle2
+create MAXSHAPES rectangle3
+create MAXSHAPES triangle0
+create MAXSHAPES ellipse-1
+create MAXSHAPES circle -1
+create MAXSHAPES circle -.1
+create MAXSHAPES circle 0.1
+create MAXSHAPES circle 0.0
+create MAXSHAPES circle 02 3 4
+create MAXSHAPES circle 0abc
+create MAXSHAPES ellipse-1
+create MAXSHAPES circle 0-1
+create MAXSHAPES circle 0-.1
+create MAXSHAPES circle 00.1
+create MAXSHAPES circle 00.0
+create MAXSHAPES circle 002 3 4
+create MAXSHAPES circle 00abc
+create MAXSHAPES circle 0 -1
+create MAXSHAPES circle 0 -.1
+create MAXSHAPES circle 0 0.1
+create MAXSHAPES circle 0 0.0
+create MAXSHAPES circle 0 02 3 4
+create MAXSHAPES circle 0 0abc
+create MAXSHAPES ellipse 2 3 0 -1 MAXSHAPES
+create MAXSHAPES ellipse 2 3 0 1 MAXSHAPES
+create MAXSHAPES circle 2 3 0 1 maxshapes
+create MAXSHAPES circle2 3 0 1 maxshapes
+create MAXSHAPES circle2 3 0 1maxshapes
+create MAXSHAPES circle2 3 0 1maxshapes
+create MAXSHAPES circle 2 3 0 1 maxshapes
+create MAXSHAPES circle 2 3 0 0 1
+create MAXSHAPES circle 2 3 0 0abc
+create MAXSHAPES circle 2 3 0 0
+maxShapes 3
+draw all
+delete all
+draw all
+maxShapes 3
+draw maxshapes
+draw MAXSHAPES
+delete maxshapes
+delete MAXSHAPES
+create MAXSHAPES ellipse 10000 10000 0 1
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create MAXSHAPES
+create maxshapes
+create maxshapes circle2
+create maxshapes rectangle3
+create maxshapes triangle0
+create maxshapes ellipse-1
+create maxshapes circle -1
+create maxshapes circle -.1
+create maxshapes circle 0.1
+create maxshapes circle 0.0
+create maxshapes circle 02 3 4
+create maxshapes circle 0abc
+create maxshapes ellipse-1
+create maxshapes circle 0-1
+create maxshapes circle 0-.1
+create maxshapes circle 00.1
+create maxshapes circle 00.0
+create maxshapes circle 002 3 4
+create maxshapes circle 00abc
+create maxshapes circle 0 -1
+create maxshapes circle 0 -.1
+create maxshapes circle 0 0.1
+create maxshapes circle 0 0.0
+create maxshapes circle 0 02 3 4
+create maxshapes circle 0 0abc
+create maxshapes ellipse 2 3 0 -1 maxshapes
+create maxshapes ellipse 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1maxshapes
+create maxShapes circle2 3 0 1maxshapes
+create maxShapes circle 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 0 1
+create maxshapes circle 2 3 0 0abc
+create maxshapes circle 2 3 0 0
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create MAXSHAPES
+create maxshapes
+create maxshapes circle2
+create maxshapes rectangle3
+create maxshapes triangle0
+create maxshapes ellipse-1
+create maxshapes circle -1
+create maxshapes circle -.1
+create maxshapes circle 0.1
+create maxshapes circle 0.0
+create maxshapes circle 02 3 4
+create maxshapes circle 0abc
+create maxshapes ellipse-1
+create maxshapes circle 0-1
+create maxshapes circle 0-.1
+create maxshapes circle 00.1
+create maxshapes circle 00.0
+create maxshapes circle 002 3 4
+create maxshapes circle 00abc
+create maxshapes circle 0 -1
+create maxshapes circle 0 -.1
+create maxshapes circle 0 0.1
+create maxshapes circle 0 0.0
+create maxshapes circle 0 02 3 4
+create maxshapes circle 0 0abc
+create maxshapes ellipse 2 3 0 -1 maxshapes
+create maxshapes ellipse 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1 maxshapes
+create maxshapes circle2 3 0 1maxshapes
+create maxShapes circle2 3 0 1maxshapes
+create maxShapes circle 2 3 0 1 maxshapes
+create maxshapes circle 2 3 0 0 1
+create maxshapes circle 2 3 0 0abc
+draw all
+delete 0
+delete 1
+deleteall
+deletemaxshapes
+deleteMAXSHAPES
+delete maxShapes
+delete rotate
+delete draw
+delete delete
+delete delete all
+delete name
+delete ellispe
+delete rectangle
+delete circle
+delete triangle
+delete MAXSHAPES
+draw all
+draw maxShapes
+draw 0
+draw maxshapes
+draw maxshapes all
+draw maxshapes
+delete MAXSHAPES
+delete all MAXSHAPES
+creat
+create
+create create
+create maxShapes
+create maxshapes
+create all
+create rotate
+create draw
+create delete
+create delete all
+create name
+create ellispe
+create rectangle
+create circle
+create triangle
+creat maxshapes
+create maxshapes
+create MAXSHAPES
+create MAXSHAPES circle2
+create MAXSHAPES rectangle3
+create MAXSHAPES triangle0
+create MAXSHAPES ellipse-1
+create MAXSHAPES circle -1
+create MAXSHAPES circle -.1
+create MAXSHAPES circle 0.1
+create MAXSHAPES circle 0.0
+create MAXSHAPES circle 02 3 4
+create MAXSHAPES circle 0abc
+create MAXSHAPES ellipse-1
+create MAXSHAPES circle 0-1
+create MAXSHAPES circle 0-.1
+create MAXSHAPES circle 00.1
+create MAXSHAPES circle 00.0
+create MAXSHAPES circle 002 3 4
+create MAXSHAPES circle 00abc
+create MAXSHAPES circle 0 -1
+create MAXSHAPES circle 0 -.1
+create MAXSHAPES circle 0 0.1
+create MAXSHAPES circle 0 0.0
+create MAXSHAPES circle 0 02 3 4
+create MAXSHAPES circle 0 0abc
+create MAXSHAPES ellipse 2 3 0 -1 MAXSHAPES
+create MAXSHAPES ellipse 2 3 0 1 MAXSHAPES
+create MAXSHAPES circle 2 3 0 1 maxshapes
+create MAXSHAPES circle2 3 0 1 maxshapes
+create MAXSHAPES circle2 3 0 1maxshapes
+create MAXSHAPES circle2 3 0 1maxshapes
+create MAXSHAPES circle 2 3 0 1 maxshapes
+create MAXSHAPES circle 2 3 0 0 1
+create MAXSHAPES circle 2 3 0 0abc
+create MAXSHAPES circle 2 3 0 0
+/tmp/Pqc3M8FRXJ/parser.exe.gilotraa < ./15 > /tmp/Pqc3M8FRXJ/gilotraa.out15 2> /tmp/Pqc3M8FRXJ/gilotraa.err15
+-------------------------------------------------------------
+
+Your program produced the following output:
+=============================================================
+> New database: max shapes is 1
+> Error: invalid value
+> Created  MAXSHAPES: circle 10000 10000 0 0
+> New database: max shapes is 2
+> Created  MAXSHAPES: ellipse 10000 10000 0 1
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too many arguments
+> Error: too many arguments
+> Created  maxshapes: circle 2 3 0 0
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Drew all shapes
+MAXSHAPES: ellipse 10000 10000 0 1
+maxshapes: circle 2 3 0 0
+> Error: shape 0 not found
+> Error: shape 1 not found
+> Error: invalid command
+> Error: invalid command
+> Error: invalid command
+> Error: shape maxShapes not found
+> Error: shape rotate not found
+> Error: shape draw not found
+> Error: shape delete not found
+> Error: shape delete not found
+> Error: shape name not found
+> Error: shape ellispe not found
+> Error: shape rectangle not found
+> Error: shape circle not found
+> Error: shape triangle not found
+> Deleted shape MAXSHAPES
+> Drew all shapes
+maxshapes: circle 2 3 0 0
+> Error: shape maxShapes not found
+> Error: shape 0 not found
+> Drew maxshapes: circle 2 3 0 0
+> Error: too many arguments
+> Drew maxshapes: circle 2 3 0 0
+> Error: shape MAXSHAPES not found
+> Error: too many arguments
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape maxshapes exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: too many arguments
+> Error: too many arguments
+> Error: shape array is full
+> New database: max shapes is 3
+> Drew all shapes
+> Deleted: all shapes
+> Drew all shapes
+> New database: max shapes is 3
+> Error: shape maxshapes not found
+> Error: shape MAXSHAPES not found
+> Error: shape maxshapes not found
+> Error: shape MAXSHAPES not found
+> Created  MAXSHAPES: ellipse 10000 10000 0 1
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too many arguments
+> Error: too many arguments
+> Created  maxshapes: circle 2 3 0 0
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Drew all shapes
+MAXSHAPES: ellipse 10000 10000 0 1
+maxshapes: circle 2 3 0 0
+> Error: shape 0 not found
+> Error: shape 1 not found
+> Error: invalid command
+> Error: invalid command
+> Error: invalid command
+> Error: shape maxShapes not found
+> Error: shape rotate not found
+> Error: shape draw not found
+> Error: shape delete not found
+> Error: shape delete not found
+> Error: shape name not found
+> Error: shape ellispe not found
+> Error: shape rectangle not found
+> Error: shape circle not found
+> Error: shape triangle not found
+> Deleted shape MAXSHAPES
+> Drew all shapes
+maxshapes: circle 2 3 0 0
+> Error: shape maxShapes not found
+> Error: shape 0 not found
+> Drew maxshapes: circle 2 3 0 0
+> Error: too many arguments
+> Drew maxshapes: circle 2 3 0 0
+> Error: shape MAXSHAPES not found
+> Error: too many arguments
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid command
+> Error: shape maxshapes exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: too many arguments
+> Error: too many arguments
+> Created  MAXSHAPES: circle 2 3 0 0
+> 
+-------------------------------------------------------------
+
+<<<<<<<<< Comparing output to solution >>>>>>>>>>>>
+
+
+Output did not match the solution
+The following output would have been accepted:
+
+
+Solution output:
+=============================================================
+> New database: max shapes is 1
+> Error: invalid value
+> Created MAXSHAPES: circle 10000 10000 0 0
+> New database: max shapes is 2
+> Created MAXSHAPES: ellipse 10000 10000 0 1
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too many arguments
+> Error: invalid argument
+> Created maxshapes: circle 2 3 0 0
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Drew all shapes
+MAXSHAPES: ellipse 10000 10000 0 1
+maxshapes: circle 2 3 0 0
+> Error: shape 0 not found
+> Error: shape 1 not found
+> Error: invalid command
+> Error: invalid command
+> Error: invalid command
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape name not found
+> Error: shape ellispe not found
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Deleted shape MAXSHAPES
+> Drew all shapes
+maxshapes: circle 2 3 0 0
+> Error: invalid shape name
+> Error: shape 0 not found
+> Drew maxshapes: circle 2 3 0 0
+> Error: too many arguments
+> Drew maxshapes: circle 2 3 0 0
+> Error: shape MAXSHAPES not found
+> Error: too many arguments
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape maxshapes exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid argument
+> Error: shape array is full
+> New database: max shapes is 3
+> Drew all shapes
+> Deleted: all shapes
+> Drew all shapes
+> New database: max shapes is 3
+> Error: shape maxshapes not found
+> Error: shape MAXSHAPES not found
+> Error: shape maxshapes not found
+> Error: shape MAXSHAPES not found
+> Created MAXSHAPES: ellipse 10000 10000 0 1
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too many arguments
+> Error: invalid argument
+> Created maxshapes: circle 2 3 0 0
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape MAXSHAPES exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: shape maxshapes exists
+> Drew all shapes
+MAXSHAPES: ellipse 10000 10000 0 1
+maxshapes: circle 2 3 0 0
+> Error: shape 0 not found
+> Error: shape 1 not found
+> Error: invalid command
+> Error: invalid command
+> Error: invalid command
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape name not found
+> Error: shape ellispe not found
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Deleted shape MAXSHAPES
+> Drew all shapes
+maxshapes: circle 2 3 0 0
+> Error: invalid shape name
+> Error: shape 0 not found
+> Drew maxshapes: circle 2 3 0 0
+> Error: too many arguments
+> Drew maxshapes: circle 2 3 0 0
+> Error: shape MAXSHAPES not found
+> Error: too many arguments
+> Error: invalid command
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: shape maxshapes exists
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: too few arguments
+> Error: too few arguments
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid shape name
+> Error: invalid command
+> Error: shape maxshapes exists
+> Error: too few arguments
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid shape type
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: too few arguments
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid argument
+> Error: invalid value
+> Error: invalid argument
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid value
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid shape type
+> Error: invalid value
+> Error: too many arguments
+> Error: invalid argument
+> Created MAXSHAPES: circle 2 3 0 0
+> 
+-------------------------------------------------------------
+Running diff on program output and solution output
+( < actual output vs > expected output )
+=============================================================
+20c20
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+31c31
+< > Error: too few arguments
+---
+> > Error: invalid argument
+35d34
+< > Error: invalid value
+38c37,38
+< > Error: too few arguments
+---
+> > Error: invalid argument
+> > Error: invalid argument
+44c44
+< > Error: too few arguments
+---
+> > Error: invalid argument
+55c55
+< > Error: too many arguments
+---
+> > Error: invalid argument
+71c71
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+115,119c115,119
+< > Error: shape maxShapes not found
+< > Error: shape rotate not found
+< > Error: shape draw not found
+< > Error: shape delete not found
+< > Error: shape delete not found
+---
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+122,124c122,124
+< > Error: shape rectangle not found
+< > Error: shape circle not found
+< > Error: shape triangle not found
+---
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+128c128
+< > Error: shape maxShapes not found
+---
+> > Error: invalid shape name
+149c149
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+160c160
+< > Error: too few arguments
+---
+> > Error: invalid argument
+164d163
+< > Error: invalid value
+167c166,167
+< > Error: too few arguments
+---
+> > Error: invalid argument
+> > Error: invalid argument
+173c173
+< > Error: too few arguments
+---
+> > Error: invalid argument
+184c184
+< > Error: too many arguments
+---
+> > Error: invalid argument
+210c210
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+221c221
+< > Error: too few arguments
+---
+> > Error: invalid argument
+225d224
+< > Error: invalid value
+228c227,228
+< > Error: too few arguments
+---
+> > Error: invalid argument
+> > Error: invalid argument
+234c234
+< > Error: too few arguments
+---
+> > Error: invalid argument
+245c245
+< > Error: too many arguments
+---
+> > Error: invalid argument
+261c261
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+305,309c305,309
+< > Error: shape maxShapes not found
+< > Error: shape rotate not found
+< > Error: shape draw not found
+< > Error: shape delete not found
+< > Error: shape delete not found
+---
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+312,314c312,314
+< > Error: shape rectangle not found
+< > Error: shape circle not found
+< > Error: shape triangle not found
+---
+> > Error: invalid shape name
+> > Error: invalid shape name
+> > Error: invalid shape name
+318c318
+< > Error: shape maxShapes not found
+---
+> > Error: invalid shape name
+339c339
+< > Error: too few arguments
+---
+> > Error: invalid shape name
+350c350
+< > Error: too few arguments
+---
+> > Error: invalid argument
+354d353
+< > Error: invalid value
+357c356,357
+< > Error: too few arguments
+---
+> > Error: invalid argument
+> > Error: invalid argument
+363c363
+< > Error: too few arguments
+---
+> > Error: invalid argument
+374c374
+< > Error: too many arguments
+---
+> > Error: invalid argument
+-------------------------------------------------------------
+
+Running valgrind to check for memory leaks
+
+############### Testcase 15 Results ##########################
+Functionality: FAIL - Output did not match solution
+Valgrind:      PASS - No memory leaks detected
+
+
+#############################################################
+################# Summary for 15 test(s) #####################
+#############################################################
+
+Functionality: FAIL: 2 test(s) failed!
+Valgrind:      PASS: No memory leaks detected
+
+#############################################################
+#############################################################
+#############################################################
+
